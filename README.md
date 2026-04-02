@@ -120,7 +120,9 @@ Designed using **Star Schema** for optimal performance:
 
 ## 📸 Dashboard Preview
 
-(Attach screenshots here)
+<img width="1001" height="568" alt="image" src="https://github.com/user-attachments/assets/3d4e281c-f1f3-4009-9f38-6a6e45adc9d9" />
+<img width="998" height="567" alt="image" src="https://github.com/user-attachments/assets/e73a1d39-3b27-4510-a169-7f2fb50ee237" />
+
 
 ---
 
