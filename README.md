@@ -1,66 +1,30 @@
-# 🏬 Retail Data Warehouse & Executive Dashboard
+# 📊 Sales Analytics Dashboard (Power BI)
 
 ## 🚀 Overview
 
-Built an end-to-end retail analytics solution simulating a real-world enterprise data warehouse using SQL Server, SSIS, and Power BI. The solution enables business users to track sales performance, profitability, and customer trends through an interactive executive dashboard.
+This project presents an **interactive Sales Analytics Dashboard** built using Power BI to analyze sales performance, profitability, and product trends from retail data.
+
+The dashboard enables stakeholders to quickly understand key business metrics and make data-driven decisions.
 
 ---
 
 ## 🎯 Business Problem
 
-Retail organizations often struggle with:
+Retail businesses often struggle with:
 
-* Disconnected data across multiple sources
-* Lack of centralized reporting
-* Difficulty in tracking key business KPIs
+* Understanding sales trends over time
+* Identifying profitable products
+* Analyzing regional performance
 
-👉 This project solves these challenges by creating a **centralized data warehouse and interactive BI dashboard** for real-time decision-making.
-
----
-
-## 🏗️ Architecture
-
-```
-Source (CSV Files) → Staging → Data Warehouse → Power BI Dashboard
-```
-
-* **Staging Layer**: Raw data ingestion
-* **Data Warehouse**: Cleaned & structured star schema
-* **Power BI**: Business insights & visualization
-
----
-
-## 🗄️ Data Model
-
-Designed using **Star Schema** for optimal performance:
-
-* **Fact Table**: `Fact_Orders`
-* **Dimension Tables**:
-
-  * `Dim_Customers`
-  * `Dim_Products`
-  * `Dim_Geography`
-  * `DateTable`
+👉 This dashboard solves these challenges by providing **interactive and visual insights**.
 
 ---
 
 ## ⚙️ Tech Stack
 
-* **SQL Server** → Data warehouse storage
-* **SSIS** → ETL pipeline automation
-* **Power BI** → Dashboard & reporting
-* **DAX** → KPI calculations
-
----
-
-## 🔄 ETL Pipeline
-
-1. Extract data from CSV files
-2. Load into staging tables
-3. Transform & clean data
-4. Load into fact & dimension tables
-5. Validate data using record count checks
-6. Schedule ETL via SSIS
+* Power BI
+* DAX (Data Analysis Expressions)
+* Excel (Data Source)
 
 ---
 
@@ -68,9 +32,21 @@ Designed using **Star Schema** for optimal performance:
 
 ### 📌 Executive Overview
 
-* KPI Cards (Sales, Profit, Orders, Margin, YoY Growth)
+* Total Sales → $12.6M
+
+* Total Profit → $1.47M
+
+* Profit Margin → 11.6%
+
+* YoY Growth → 51.5%
+
+* Total Orders → 25K
+
 * Sales Trend (Yearly)
+
 * Profit Trend (Yearly)
+
+---
 
 ### 📌 Detailed Analysis
 
@@ -81,55 +57,77 @@ Designed using **Star Schema** for optimal performance:
 
 ---
 
-## 📈 Key KPIs
+## 📈 Key Insights
 
-* **Total Sales** → $12.6M
-* **Total Profit** → $1.47M
-* **Profit Margin** → 11.6%
-* **YoY Growth** → 51.5%
-* **Total Orders** → 25K
+* Central region contributes highest sales
+* Certain products generate high revenue but low profit
+* Strong YoY growth indicates business expansion
 
 ---
 
-## 💡 Business Insights
+## 🧠 DAX Measures
 
-* Identified high-performing regions (e.g., Central region leading sales)
-* Detected products with high sales but low profitability
-* Enabled filtering by region, category, and year for granular analysis
+```DAX
+Total Sales = SUM(Fact_Orders[Sales])
+Total Profit = SUM(Fact_Orders[Profit])
+Total Orders = DISTINCTCOUNT(Fact_Orders[OrderID])
 
----
+Sales LY = CALCULATE([Total Sales], SAMEPERIODLASTYEAR(DateTable[Date]))
+Sales YoY % = DIVIDE([Total Sales] - [Sales LY], [Sales LY])
 
-## 🧠 Learnings
-
-* Data warehouse design using **Star Schema**
-* Building scalable **ETL pipelines with SSIS**
-* Writing optimized SQL queries
-* Designing **business-focused dashboards in Power BI**
-* Using DAX for KPI and time intelligence
-
----
-
-## 🎯 Key Highlights
-
-* Multi-page interactive dashboard
-* Advanced visualization (Scatter Plot for Sales vs Profit)
-* Real-world business use case simulation
-* Clean and professional UI/UX design
+Profit Margin = DIVIDE([Total Profit], [Total Sales])
+```
 
 ---
 
 ## 📸 Dashboard Preview
 
-<img width="1001" height="568" alt="image" src="https://github.com/user-attachments/assets/3d4e281c-f1f3-4009-9f38-6a6e45adc9d9" />
-<img width="998" height="567" alt="image" src="https://github.com/user-attachments/assets/e73a1d39-3b27-4510-a169-7f2fb50ee237" />
+### Executive Dashboard
 
+<img width="1001" height="568" alt="image" src="https://github.com/user-attachments/assets/3d4e281c-f1f3-4009-9f38-6a6e45adc9d9" />
+
+### Detailed Analysis
+
+<img width="998" height="567" alt="image" src="https://github.com/user-attachments/assets/e73a1d39-3b27-4510-a169-7f2fb50ee237" />
 
 ---
 
-## 🚀 Future Improvements
+## 📁 Project Structure
 
-* Add real-time data refresh
-* Implement row-level security (RLS)
-* Deploy dashboard to Power BI Service
+```bash
+Sales-Analytics-PowerBI/
+│
+├── dashboard/     # Power BI files & screenshots
+├── data/          # Source dataset
+├── docs/          # Relationships & measures
+│
+└── README.md
+```
+
+---
+
+## 🚀 How to Use
+
+1. Clone this repository
+2. Open `.pbix` file in Power BI Desktop
+3. Explore dashboard with slicers
+
+---
+
+## 💡 Learnings
+
+* Data modeling using relationships
+* Writing DAX measures
+* Building interactive dashboards
+* Business storytelling with data
+
+---
+
+## 🎯 Key Highlights
+
+* Multi-page dashboard
+* Advanced visualization (Scatter Plot)
+* Real-world business use case
+* Clean UI/UX design
 
 ---
