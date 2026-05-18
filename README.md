@@ -1,10 +1,15 @@
-# 📊 Sales Analytics Dashboard (Power BI)
+### 📊 Enterprise Sales Analytics Dashboard
+<p align="center">
+  <a href="https://github.com/asgeek96/Sales-Analytics-PowerBI">
+    <img width="900" alt="Enterprise Sales Analytics Dashboard" src="https://github.com/user-attachments/assets/3d4e281c-f1f3-4009-9f38-6a6e45adc9d9">
+  </a>
+</p>
+2-page Power BI dashboard analysing $12.6M sales, $1.47M profit & 25K orders across regions and product categories  
+**DAX:** Total Sales, Total Profit, Profit Margin, Sales LY, Sales YoY %, Date Table for time intelligence  
+**Key Finding:** 51.5% YoY growth recorded; Central region leads sales — yet certain high-revenue products run below-average margins  
+Scatter plot (Sales vs Profit), Top 10 product ranking, interactive Year/Region/Category slicers  
 
-## 🚀 Overview
-
-This project presents an **interactive Sales Analytics Dashboard** built using Power BI to analyze sales performance, profitability, and product trends from retail data.
-
-The dashboard enables stakeholders to quickly understand key business metrics and make data-driven decisions.
+🔗 [View Project](https://github.com/asgeek96/Sales-Analytics-PowerBI) · 📖 [Read Case Study](https://github.com/asgeek96/sales-analytics-dashboard/blob/9a4c3863a0cfb8e009c13cdf678d270bf606e813/retail-data-warehouse/docs/case-study.md)
 
 ---
 
